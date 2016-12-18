@@ -1,0 +1,4 @@
+.project
+*.png
+*.log
+debug_*

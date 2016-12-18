@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <head>
+    <title>capybara 内容</title>
+  </head>
+    <body>
+    <p>2つめのページ</p>
+        <select name="hoge" id='sel'>
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        </select>
+        <p id='box'>
+        <input type="checkbox" name="riyu" value="1">面白い
+        <input type="checkbox" name="riyu" value="2">役に立つ
+        <input type="checkbox" name="riyu" value="3">いまいち
+        </p>
+        <button id='bsend'>送信</button>
+    </body>
+  <script>
+    (function(){
+        alert('sss');
+        var btn=document.getElementById('bsend');
+        btn.addEventListener('click',function(){
+        	console.log(this);
+        	console.log(document.getElementById('sel'));
+        	console.log(document.getElementById('box'));
+
+        });
+        
+    })();
+  </script>
+</html>
