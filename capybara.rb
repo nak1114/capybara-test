@@ -51,3 +51,14 @@ session.driver.debug #デバッグ用
 #http://phantomjs.org/download.html
 #https://www.chromium.org/getting-involved/download-chromium
 
+Capybara.register_driver :trifleJS do |app|
+  Capybara::Poltergeist::Driver.new(app, phantomjs: 'TrifleJS.exe', phantomjs_options: ['--emulate:IE8'])
+end
+
+Capybara.app_host = 'http://www.google.com'
+
+session = Capybara::Session.new(:trifleJS)
+
+session.visit '/'
+
+session.save_screenshot 'hello_google.png'
